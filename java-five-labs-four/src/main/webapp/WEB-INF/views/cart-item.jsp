@@ -1,0 +1,62 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Duy Nam
+  Date: 5/13/2023
+  Time: 7:32 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <table class="table table-success table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="item" items="${carts}">
+            <form action="<c:url value='/shopping-cart/update-product/${item.id}'/>" method="post">
+                <tr>
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                    <td><input type="number" name="qty" value="${item.quantity}" onblur="this.form.submit()"></td>
+                    <td>${item.quantity * item.price}</td>
+                    <td><a href="<c:url value='/shopping-cart/remove-cart/${item.id}'/>" class="btn btn-info">Remove</a></td>
+                </tr>
+            </form>
+        </c:forEach>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>AmountTotal: ${amount}</th>
+            <th>QuantityTotal: ${count}</th>
+        </tr>
+        </tfoot>
+    </table>
+    <a href="<c:url value='/shopping-cart/clear-cart'/>" class="btn btn-info">Clear Cart</a>
+    <a href="<c:url value='/shopping-cart/product'/>" class="btn btn-info">Add more</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+</html>
