@@ -1,0 +1,23 @@
+<table style="border: none;" class="table table-borderless mt-5">
+    <thead class="border">
+      <tr>
+        <th scope="col"><input type="checkbox" name="" id=""><span class="ml-4 h4 text-secondary">Sản phẩm</span></th>
+        <th colspan="2" scope="col " class="h4 text-secondary" ng-click="sortData('name')"><span class="ml-4">Tên sản phẩm</span> <span ng-class="getSortClass('name')"></span></th>
+        <th scope="col " class="h4 align__table-center text-secondary" ng-click="sortData('price')">Đơn giá <span ng-class="getSortClass('price')"></span></th>
+        <th scope="col" class="h4 align__table-center text-secondary">Số lượng</th>
+        <th scope="col" class="h4 align__table-center text-secondary">Số tiền</th>
+        <th scope="col" class="h4 align__table-center text-secondary">Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in productss | orderBy:sortColumn:reverse" class="border">
+        <td colspan=""><input type="checkbox" ng-model="item.buy" name="" id=""><img class="ml-4 img-thumbnail--manual" width="100" height="80" src="{{item.galleries[0].thumbnail}}" alt=""></td>
+        <td colspan=""><div class="mt-4 h4 align__table-center home-product-item__name"><a href="#!product/{{item.id}}/detail">{{item.name}}</a></div></td>
+        <td></td>
+        <td><div class="mt-5 h4 align__table-center font-italic">{{item.price | formatVND}}</div></td>
+        <td><input ng-disabled="!item.buy" ng-model="item.quantity" ng-change="onChangeQuantity(item)" class="form-control mt-5 align__table-center" type="number"></td>
+        <td><div class="mt-5 h4 align__table-center product__new__price--int font-italic">{{item.price * item.quantity | formatVND}}</div></td>
+        <td class="align__table-center"><button ng-click="deleteProductCartList(item)" class="btn--cart">Xóa</button></td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,143 @@
+<div class="app__container">
+    <div class="grid" style="height: 660px;">
+        <div class="grid__row app__content">
+            <div class="row grid">
+                <div class="form-control form-control-lg">
+                    <span><i class="fa-solid fa-truck"></i> Nhấn vào mục Mã giảm giá ở cuối trang để hưởng miễn
+                        phí vận chuyển bạn nhé!</span>
+                </div>
+            </div>
+            <!-- Cart -->
+            <div>
+                <form name="totalForm" action="">
+                    <div class="grid">
+                        <div class="grid__row">
+                            <div class="grid__column-6 mt-5 bg--carttotal">
+                                <h1>BILLING DETAIL</h1>
+                                <div class="grid">
+                                    <div class="grid__row">
+                                        <div class="grid__column-4">
+                                            <div class="form-group">
+                                                <label for="my-input">Name</label>
+                                                <input ng-model="info.fullName" id="my-input"
+                                                    class="form-control form-control-lg" ng-minlength="5"
+                                                    ng-maxlength="20" ng-pattern="/^[a-zA-Z ]*$/" ng-required="true"
+                                                    name="name" type="text">
+                                                <div ng-if="totalForm.name.$touched && totalForm.name.$invalid">
+                                                    <span class="form-message"
+                                                        ng-if="totalForm.name.$error.required">Name is required</span>
+                                                    <span class="form-message"
+                                                        ng-if="totalForm.name.$error.minlength">Name is too short</span>
+                                                    <span class="form-message"
+                                                        ng-if="totalForm.name.$error.maxlength">Name is too long</span>
+                                                    <span class="form-message"
+                                                        ng-if="totalForm.name.$error.pattern">Name is invalid</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid__column-4"></div>
+                                        <div class="grid__column-4">
+                                            <div class="form-group">
+                                                <label for="my-input">Phone number</label>
+                                                <input ng-model="info.phoneNumber" id="my-input"
+                                                    class="form-control form-control-lg" type="text" ng-required="true"
+                                                    ng-pattern="/(((\+|)84)|0)(3|5|7|8|9)+([0-9]{8})\b/" name="phone"
+                                                    type="tel">
+                                                <div ng-if="totalForm.phone.$touched && totalForm.phone.$invalid">
+                                                    <span class="form-message"
+                                                        ng-if="totalForm.phone.$error.required">Phone is required</span>
+                                                    <span class="form-message"
+                                                        ng-if="totalForm.phone.$error.pattern">Phone is invalid</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rid__full-width">
+                                    <div class="form-group">
+                                        <label for="my-input">Email Address</label>
+                                        <input ng-model="info.email" id="my-input" name="email"
+                                            class="form-control form-control-lg" type="email" ng-required="true"
+                                            ng-pattern="/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/">
+                                        <div ng-if="totalForm.email.$touched && totalForm.email.$invalid">
+                                            <span class="form-message" ng-if="totalForm.email.$error.pattern">Error
+                                                pattern</span>
+                                            <span class="form-message" ng-if="totalForm.email.$error.required">Email is
+                                                required</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rid__full-width">
+                                    <div class="form-group">
+                                        <label for="my-input">Address</label>
+                                        <input ng-model="info.address" id="my-input"
+                                            class="form-control form-control-lg" type="text" name="address"
+                                            ng-pattern="/[^a-z0-9A-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễếệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/u"
+                                            ng-required="true">
+                                        <div ng-if="totalForm.address.$touched && totalForm.address.$invalid">
+                                            <span class="form-message" ng-if="totalForm.address.$error.required">Address
+                                                is required</span>
+                                            <span class="form-message" ng-if="totalForm.address.$error.pattern">Address
+                                                is pattern</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="grid__column-6 mt-5">
+                                <div class="bg--carttotal" style="background-color: rgb(252, 252, 252); padding: 20px;">
+                                    <h1>CART TOTALS</h1>
+                                    <h5>Product</h5>
+                                    <hr>
+                                    <div style="height: 180px;" class="overflow-auto">
+                                        <table class="table table-borderless table-hover" style="border: none;">
+                                            <tbody class="align__table-center">
+                                                <thead>
+                                                    <th>Name</th>
+                                                    <th>Price</th>
+                                                    <th>Quantity</th>
+                                                    <th>Total</th>
+                                                    <th>Action</th>
+                                                </thead>
+                                                <tr ng-repeat="item in cartTotal">
+                                                    <th scope="row">{{item.name}}</th>
+                                                    <td>{{item.price | formatVND}}</td>
+                                                    <td>x<input style="text-align: center;" class="" ng-model="item.quantity" type="number" value="{{item.quantity}}"></td>
+                                                    <td>{{item.price * item.quantity | formatVND}}</td>
+                                                    <td> <button type="button" ng-click="deleteProductCartTotal(item)"
+                                                            class="btn__cart-total btn-info rounded">Xóa</button> </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <span class="h5">Subtotal</span>
+                                    <hr>
+                                    <span class="h5">Shipping</span>
+                                    <hr>
+                                    <div class="grid">
+                                        <div class="grid__row">
+                                            <div class="grid__column-8">
+                                                <h1>Total:</h1>
+                                            </div>
+                                            <div class="grid__column-4 mt-4">
+                                                <h3>{{getTotal() | formatVND}}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <span>
+                                        <button type="button" ng-disabled="totalForm.$invalid" ng-click="checkOut()"
+                                            class="btn btn--cart_total mt-3">
+                                            <p class="mt-4">PlaceOrder</p>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- End Cart -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<section class="h-100" style="background-color: #eee;">
+  <div class="h-100 py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-11">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3 ng-if="!isHistoryLoading" class="fw-normal mb-0 text-primary">Cart history</h3>
+          <div ng-if="isHistoryLoading" class="loader" style="margin-top: 15%;"></div>
+          <div>
+            <p ng-if="!isHistoryLoading" class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i
+                  class="fas fa-angle-down mt-1"></i></a></p>
+          </div>
+        </div>
+        <div class="card rounded-3 mb-4">
+          <div class="card-body p-4" ng-repeat="item in data">
+            <div class="row d-flex justify-content-between align-items-center">
+              <div class="col-md-2 col-lg-2 col-xl-2">
+                <p class="h4 text-primary">Name</p>
+                <p><span class="text-muted h4">{{item.product.name}}</span></p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-2">
+                <p class="h4 text-primary">Price</p>
+                <p><span class="text-warning h4">{{item.price | formatVND}}</span></p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-2">
+                <p class="h4 text-primary">Quantity</p>
+                <p><span class="text-muted h4">{{item.quantity}}</span></p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-2">
+                <p class="h4 text-primary">Date</p>
+                <p><span class="text-muted h4">{{item.order.orderDate | date:'dd/MM/yyyy'}}</span></p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-2">
+                <p class="h4 text-primary">Total</p>
+                <p><span class="h4 product__new__price--int">{{item.totalMoney | formatVND}}</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

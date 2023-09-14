@@ -1,0 +1,328 @@
+<footer class="footer">
+    <div class="grid">
+        <div class="grid__row">
+            <div class="grid__column-2-4">
+                <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a href="" class="footer-item__link">Trung tâm trợ giúp</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item__link">Duy Nam shop mall</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item__link">Hướng dẫn mua hàng</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid__column-2-4">
+                <h3 class="footer__heading">Giới thiệu</h3>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a href="" class="footer-item__link">Giới thiệu</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item__link">Tuyển dụng</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item__link">Điều khoản</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid__column-2-4">
+                <h3 class="footer__heading">Danh mục</h3>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <a href="#!intro" class="footer-item__link">Giới thiệu</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="complain.html" class="footer-item__link">Chính sách khiếu nại</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="change.html" class="footer-item__link">Chính sách đổi trả</a>
+                    </li>
+                    <li class="footer-item">
+                        <a href="" class="footer-item__link">Điều khoản</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid__column-2-4">
+                <h3 class="footer__heading">Theo dõi</h3>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                        <i class="footer-item__icon fa-brands fa-facebook-square"></i>
+                        <a href="" class="footer-item__link">Facebook</a>
+                    </li>
+                    <li class="footer-item">
+                        <i class="footer-item__icon fa-brands fa-instagram"></i>
+                        <a href="" class="footer-item__link">Instagram</a>
+                    </li>
+                    <li class="footer-item">
+                        <i class="footer-item__icon fa-brands fa-linkedin"></i>
+                        <a href="" class="footer-item__link">LinkedIn</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid__column-2-4">
+                <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
+                <div class="footer__dowload">
+                    <img src="assets/img/qr_code.png" alt="Dowload Qr" class="footer__dowload-qr">
+                    <div class="footer__dowload-apps">
+                        <a href="" class="footer__dowload-app-link">
+                            <img src="assets/img/qr_apstore.png" alt="App Store" class="footer__dowload-app-img">
+                        </a>
+                        <a href="" class="footer__dowload-app-link">
+                            <img src="assets/img/pr_ggg.png" alt="Goolge Play" class="footer__dowload-app-img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="grid">
+            <p class="footer__text">@ 20222 - Bản quyền thuộc công ty Duy Nam</p>
+        </div>
+    </div>
+</footer>
+<!-- Modal  register-->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Shopp Online Uy Tín Hàng Đầu Việt Nam</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="registerForm" ng-controller="registerController">
+                    <div class="auth-form">
+                        <div class="auth-form__container">
+                            <div class="auth-form__header">
+                                <h3 class="auth-form__heading">Đăng Ký</h3>
+                                <a class="auth-form__switch-btn" href="" data-dismiss="modal" aria-label="Close"
+                                    data-toggle="modal" data-target="#loginModal">Đăng nhập</a>
+                            </div>
+                        </div>
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <input ng-model="username" type="text" class="auth-form__input" name="username"
+                                    placeholder="Username của bạn" ng-required="true" ng-pattern="">
+                                <div ng-if="registerForm.username.$touched && registerForm.username.$invalid">
+                                    <span ng-if="registerForm.username.$error.pattern">Error pattern</span>
+                                    <span class="form-message" ng-if="registerForm.username.$error.required">Username is
+                                        required</span>
+                                </div>
+                            </div>
+                            <div class="auth-form__group">
+                                <input ng-model="email" type="email" class="auth-form__input" name="email"
+                                    placeholder="Email của bạn" ng-required="true" ng-pattern="">
+                                <div ng-if="registerForm.email.$touched && registerForm.email.$invalid">
+                                    <span ng-if="registerForm.email.$error.pattern">Error pattern</span>
+                                    <span class="form-message" ng-if="registerForm.email.$error.required">Email is
+                                        required</span>
+                                </div>
+                            </div>
+                            <div class="auth-form__group">
+                                <input ng-model="password" name="password" type="password" class="auth-form__input"
+                                    placeholder="Mật khẩu của bạn" ng-required="true"
+                                    ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/">
+                                <div ng-if="registerForm.password.$touched && registerForm.password.$invalid">
+                                    <span class="form-message" ng-if="registerForm.password.$error.required">Password is
+                                        required</span>
+                                    <span class="form-message" ng-if="registerForm.password.$error.pattern">Password is
+                                        invalid</span>
+                                </div>
+                            </div>
+                            <div class="auth-form__group">
+                                <input ng-model="confirmPassword" name="confirmPassword" type="password"
+                                    class="auth-form__input" placeholder="Nhập lại mật khẩu" ng-required="true">
+                                <div ng-if="registerForm.confirmPassword.$touched">
+                                    <span class="form-message"
+                                        ng-if="registerForm.password.$viewValue != registerForm.confirmPassword.$viewValue">Password
+                                        not match</span>
+                                    <span class="form-message"
+                                        ng-if="registerForm.confirmPassword.$error.required">Confirm Password is
+                                        required</span>
+                                    <span class="form-message"
+                                        ng-if="registerForm.confirmPassword.$error.pattern">Confirm Password is
+                                        invalid</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">
+                                Bằng việc đăng ký, bạn đã đồng ý với Shoppe về
+                                <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                                <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+                            </p>
+                        </div>
+                        <div class="auth-form__controls">
+                            <button class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
+                            <!-- <button type="button" ng-click="registerFunction()" class="btn btn--primary">ĐĂNG KÝ</button> -->
+                            <button type="button" ng-click="registerFunction()" ng-disabled="registerForm.$invalid"
+                                class="btn btn--primary">ĐĂNG KÝ</button>
+                        </div>
+                    </div>
+                    <div class="auth-form__socials">
+                        <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                            <i class="auth-form__socials-icon fa-brands fa-facebook-square"></i>
+                            <span class="auth-form__socials-title">
+                                Kết nối với Facebook
+                            </span>
+                        </a>
+                        <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                            <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                            <span class="auth-form__socials-title">
+                                Kết nối với Google
+                            </span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End modal register -->
+<div class="modal fade" id="forgotPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Shopp Online Uy Tín Hàng Đầu Việt Nam</h5>
+                <button id="" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form name="forgotForm">
+                    <div class="auth-form">
+                        <div class="auth-form__container">
+                            <div class="auth-form__header">
+                                <h3 class="auth-form__heading">Đăng Ký</h3>
+                                <a class="auth-form__switch-btn" href="" data-dismiss="modal" aria-label="Close"
+                                    data-toggle="modal" data-target="#loginModal">Đăng nhập</a>
+                            </div>
+                        </div>
+                        <div class="auth-form__form">
+                            <div class="auth-form__group">
+                                <input ng-model="emailForgot" type="email" class="auth-form__input" name="email"
+                                    placeholder="Email của bạn" ng-required="true" ng-pattern="">
+                                <div ng-if="forgotForm.email.$touched && forgotForm.email.$invalid">
+                                    <span ng-if="forgotForm.email.$error.pattern">Error pattern</span>
+                                    <span class="form-message" ng-if="forgotForm.email.$error.required">Email is
+                                        required</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auth-form__controls">
+                            <button class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
+                            <!-- <button type="button" ng-click="registerFunction()" class="btn btn--primary">ĐĂNG KÝ</button> -->
+                            <button type="button" ng-click="forgotPassword()" ng-disabled="forgotForm.$invalid"
+                                class="btn btn--primary">FORGOT PASSWORD</button>
+                        </div>
+                    </div>
+                    <div class="auth-form__socials">
+                        <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                            <i class="auth-form__socials-icon fa-brands fa-facebook-square"></i>
+                            <span class="auth-form__socials-title">
+                                Kết nối với Facebook
+                            </span>
+                        </a>
+                        <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                            <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                            <span class="auth-form__socials-title">
+                                Kết nối với Google
+                            </span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal login -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Shopp Online Uy Tín Hàng Đầu Việt Nam</h5>
+                <button id="closeLogin" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" ng-controller="loginController">
+                <form name="loginForm" action="">
+                    <div class="auth-form">
+                        <div class="auth-form__container">
+                            <div class="auth-form__header">
+                                <h3 class="auth-form__heading">Đăng Nhập</h3>
+                                <a class="auth-form__switch-btn" href="" data-dismiss="modal" aria-label="Close"
+                                    data-toggle="modal" data-target="#registerModal">Đăng ký</a>
+                            </div>
+                            <div class="auth-form__form">
+                                <div class="auth-form__group">
+                                    <input ng-model="username" type="text" id="username" name="username"
+                                        class="auth-form__input" ng-required="true" ng-pattern=""
+                                        placeholder="Username của bạn">
+                                    <div ng-if="loginForm.email.$touched && loginForm.email.$invalid">
+                                        <span ng-if="loginForm.email.$error.pattern">Error pattern</span>
+                                        <span class="form-message" ng-if="loginForm.email.$error.required">Email is
+                                            required</span>
+                                    </div>
+                                </div>
+                                <div class="auth-form__group">
+                                    <input type="password" name="password" ng-model="password" class="auth-form__input"
+                                        ng-required="true"
+                                        ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/"
+                                        placeholder="Mật khẩu của bạn">
+                                    <div ng-if="loginForm.password.$touched && loginForm.password.$invalid">
+                                        <span class="form-message" ng-if="loginForm.password.$error.required">Password
+                                            is required</span>
+                                        <span class="form-message" ng-if="loginForm.password.$error.pattern">Password is
+                                            invalid</span>
+                                    </div>
+                                </div>
+
+                                <div class="auth-form__aside">
+                                    <div class="auth-form__help">
+                                        <a href="" class="auth-form__help-link auth-form__help-forgot"
+                                            data-dismiss="modal" aria-label="Close" data-toggle="modal"
+                                            data-target="#forgotPassword">
+                                            Quên mật khẩu
+                                        </a>
+                                        <span class="auth-form__help-separate"></span>
+                                        <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                                    </div>
+                                </div>
+                                <div class="auth-form__controls">
+                                    <button class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
+                                    <button type="button" ng-click="onLogin()" class="btn btn--primary">ĐĂNG
+                                        NHẬP</button>
+                                </div>
+                            </div>
+                            <div class="auth-form__socials">
+                                <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                                    <i class="auth-form__socials-icon fa-brands fa-facebook-square"></i>
+                                    <span class="auth-form__socials-title">
+                                        Kết nối với Facebook
+                                    </span>
+                                </a>
+                                <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                                    <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                                    <span class="auth-form__socials-title">
+                                        Kết nối với Google
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End modal login -->

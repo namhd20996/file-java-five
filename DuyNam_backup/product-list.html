@@ -1,0 +1,157 @@
+<div class="container-fluid" style="height: 320px;">
+    <div class="row">
+        <div class="col-sm-8" style="margin-top: 2%">
+            <div id="my-carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li class="active" data-target="#my-carousel" data-slide-to="0" aria-current="location"></li>
+                    <li data-target="#my-carousel" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active item-radius">
+                        <img class="d-block w-100 img__size" src="./assets/img/paneltiki1.png" alt="">
+                    </div>
+                    <div class="carousel-item item-radius">
+                        <img class="d-block w-100 img__size" src="./assets/img/paneltiki2.jpg" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Title</h5>
+                            <p>Text</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-radius">
+                        <img class="d-block w-100 img__size" src="./assets/img/paneltiki3.jpg" alt="">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#my-carousel" data-slide="prev" role="button">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#my-carousel" data-slide="next" role="button">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-4 slideshow__img--right">
+            <span class="slideshow__img--right">
+                <img class="slideshow__right"
+                    src="https://salt.tikicdn.com/cache/w400/ts/banner/35/41/c3/5d29b2455085cd88416f7c3506c97b60.png.webp"
+                    alt="">
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="app__container">
+    <div class="grid">
+        <div class="grid__row app__content">
+            <div class="grid__column-2">
+                <nav class="category">
+                    <h3 class="category__heading">
+                        <!-- <i class="category__heading-icon fa fa-list"></i> -->
+                        Danh mục
+                    </h3>
+                    <ul class="category-list">
+                        <li ng-repeat="item in categories" class="category-item">
+                            <a href="" ng-click="getCategoryUrl(item.id)" class="category-item__link">{{item.name}}</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+            </div>
+
+            <div class="grid__column-10">
+                <div class="home-filter">
+                    <span class="home-filter__label">Sắp xếp theo</span>
+                    <button class="home-filter__btn btn">Phổ biến</button>
+                    <button class="home-filter__btn btn btn--primary">Mới nhất</button>
+                    <button class="home-filter__btn btn">Bán chạy</button>
+                    <div class="seclect-input">
+                        <span class="seclect-input__label">Giá</span>
+                        <i class="seclect-input__icon fa-solid fa-angle-down"></i>
+                        <ul class="seclect-input__list">
+                            <li class="seclect-input__item">
+                                <a href="" class="seclect-input__link">Giá: thấp đến cao</a>
+                            </li>
+                            <li class="seclect-input__item">
+                                <a href="" class="seclect-input__link">Giá: cao đến thấp</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="home-filter__page">
+                        <span class="home-filter__page-num">
+                            <span class="home-filter__page-current">1</span>/14
+                        </span>
+                        <div class="home-filter__page-control">
+                            <a href="" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
+                            </a>
+                            <a href="" class="home-filter__page-btn">
+                                <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="isLoading()" class="loader"></div>
+                <div class="home-product">
+                    <!-- Page list product -->
+                    <div class="grid__row">
+                        <div ng-repeat="item in products | limitTo:limit:begin" class="grid__column-2-4">
+                            <!-- Product item -->
+                            <a class="home-product-item" href="#!/product/{{item.id}}/detail">
+                                <div class="home-product-item__img" style="background-image: url({{item.galleries[0].thumbnail}});">
+                                </div>
+                                <h4 class="home-product-item__name">{{item.name}}</h4>
+                                <div class="home-product-item__price">
+                                    <span class="home-product-item__price-old">190.000đ</span>
+                                    <span class="home-product-item__price-current">{{item.price | formatVND}}</span>
+                                </div>
+                                <div class="home-product-item__action">
+                                    <span class="home-product-item__like home-product-item__like--liked">
+                                        <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                        <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                    </span>
+                                    <div class="home-product-item__rating">
+                                        <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                        <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                        <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                        <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="home-product-item__sold">88 đã bán</span>
+                                </div>
+                                <div class="home-product-item__origin">
+                                    <span class="home-product-item__brand">VN</span>
+                                    <span class="home-product-item__origin-name">Việt Nam</span>
+                                </div>
+                                <div class="home-product-item__favourite">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>Yêu thích</span>
+                                </div>
+                                <div class="home-product-item__sale-of">
+                                    <span class="home-product-item__sale-of-percent">43%</span>
+                                    <span class="home-product-item__sale-of-label">Giảm</span>
+                                </div>
+                            </a>
+                    
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="grid__row">
+                            <div class="grid__column-4"></div>
+                            <div class="grid__column-4">
+                                <nav ng-show="!isLoading()" aria-label="Page navigation example">
+                                    <ul class="pagination mt-4">
+                                        <li class="page-item"><button ng-click="first()" class="page-link">First</button></li>
+                                        <li class="page-item"><button ng-click="prev()" class="page-link">Prev</button></li>
+                                        <li class="page-item"><button ng-click="next()" class="page-link">Next</button></li>
+                                        <li class="page-item"><button ng-click="last()" class="page-link">Last</button></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

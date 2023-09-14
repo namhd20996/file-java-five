@@ -1,0 +1,114 @@
+<div ng-if="!isLoading" class="loader" style="margin-top: 15%;"></div>
+<div ng-show="isLoading" class="app">
+    <div class="grid">
+        <div class="app__content">
+            <div class="grid__row">
+                <div class="grid__column-4 mb-4">
+                    <div class="">
+                        <img style="width: 80%; height: 50%;" src="{{product.galleries[0].thumbnail}}" alt="">
+                    </div>
+                    <div>
+                        <h3 class="product__new-header">Hàng liên quan</h3>
+                        <hr />
+                        <img class="img-thumbnail--manual img-thumbnail--manual--margin" src="{{product.galleries[0].thumbnail}}"
+                            style="width: 100px; height: 90px;" alt="">
+                        <img class="img-thumbnail--manual img-thumbnail--manual--margin" src="{{product.galleries[0].thumbnail}}"
+                            style="width: 100px; height: 90px;" alt="">
+                        <img class="img-thumbnail--manual img-thumbnail--manual--margin" src="{{product.galleries[0].thumbnail}}"
+                            style="width: 100px; height: 90px;" alt="">
+                    </div>
+                </div>
+                <div class="grid__column-8">
+                    <h1 class="">Tên sản phẩm: <span class="product__new-header-top-text">{{product.name}}</span></h1>
+                    <!-- <h1 class="product__new-header">Tên sản phẩm: {{product.name}}
+                        </h1> -->
+                    <div class="home-product-item__rating home-product-item__rating--production">
+                        <i class="home-product-item__star--gold fa-solid fa-star home-product-item-new"></i>
+                        <i class="home-product-item__star--gold fa-solid fa-star home-product-item-new"></i>
+                        <i class="home-product-item__star--gold fa-solid fa-star home-product-item-new"></i>
+                        <i class="home-product-item__star--gold fa-solid fa-star home-product-item-new"></i>
+                        <i class="fa-solid fa-star home-product-item-new"></i>
+                        <h1 class="product__new-production product__new-production-boder">(Xem đánh giá)</h1>
+                        <h1 class="product__new-production product__new-production-price">Đã bán 123</h1>
+                    </div>
+                    <div class="">
+                        <div class="grid">
+                            <div class="grid__row">
+                                <div class="grid__column-6 mt-5">
+                                    <div class="grid">
+                                        <div class="grid__row">
+                                            <div class="grid__column-3">
+                                                <h1 class="product__new__price--all product__new__price--int">
+                                                    {{product.price | formatVND}}</h1>
+                                            </div>
+                                            <div class="grid__column-3">
+                                                <h6 class="product__new__price--all product__new__price--sale">
+                                                    190.000 đ</h6>
+                                            </div>
+                                            <div class="grid__column-3">
+                                                <span class="product__new__price--percent">-43%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="product__new--text--price">
+                                        <i class="fab fa-creative-commons-nc"></i>
+                                        RẺ HƠN HOÀN TIỀN
+                                        <i class="fa fa-question"></i>
+                                    </span> <br> <br>
+                                    <span class="product__new--text--bonus">
+                                        <i class="fa fa-money-check-alt"></i>
+                                        Thưởng lên đến 4,32 ASA ~~2.131 Xu
+                                        <i class="fa fa-question"></i>
+                                    </span> <br> <br>
+                                    <div class="product__position">
+                                        Giao đến <a class="product__position--text" href="">Q.1 P.Bến nghé, Hồ Chí
+                                            Minh - </a> <span class="product__position--text-adress">Đổi địa
+                                            chỉ</span>
+                                    </div> <br>
+
+                                    <p class="product__new-production h3">
+                                        Mô tả: {{product.shortDescription}}
+                                    </p>
+                                    <div class="product__new__container--add">
+                                        <!-- <span>Số lượng</span> <br>
+                                        <i class="fa fa-plus product__new--icon"></i>
+                                        <span> 1 </span>
+                                        <i class="fa fa-minus product__new--icon"></i> -->
+                                        <button id="" ng-click="addToCart(product)"
+                                            class="btn btn--primary button__hover">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+
+                                <div class="grid__column-6">
+                                    <div class="grid">
+                                        <div class="grid__row">
+                                            <div class="grid__column-6">
+                                                <div class="">
+                                                    <img src="./assets/img/tikinow.png" alt=""> <br>
+                                                    <span>Trước 23:59 hôm nay</span> <br>
+                                                    14.000đ (FreeShip 30k đh 149k) <br>
+                                                </div>
+                                            </div>
+                                            <div class="grid__column-6">
+                                                <div class="">
+                                                    <img src="./assets/img/tikifast.png" alt="" width="120px"> <br>
+                                                    Ngày mai, trước 23:00 <br>
+                                                    10.000đ (FreeShip 30k đh 149k) <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="product__new--text--bonus product__new--text--bonus--first">
+                                            <i class="fa fa-money-check-alt"></i>
+                                            FreeShip 100% chỉ với 28 ASA
+                                            <i class="fa fa-question"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

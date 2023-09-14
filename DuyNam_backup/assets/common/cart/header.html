@@ -1,0 +1,172 @@
+<div class="header__fixed" ng-controller="cartController">
+    <header class="header">
+      <div class="grid">
+        <nav class="header__navbar">
+          <ul class="header__navbar-list">
+            <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item-separate">
+              Kênh người bán
+              <div class="header__qr">
+                <img src="assets/img/qr_code.png" alt="Qr Code" class="header__qr-img">
+                <div class="header__qr-app">
+                  <a href="" class="header__qr-link">
+                    <img src="assets/img/pr_ggg.png" alt="Google Play" class="header__qr-dowload-img">
+                  </a>
+                  <a href="" class="header__qr-link">
+                    <img src="assets/img/qr_apstore.png" alt="App Store" class="header__qr-dowload-img">
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="header__navbar-item">
+              <span class="header__navbar-title--no-poniter">Kết nối</span>
+              <a href="" class="header__navbar-icon-link">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="" class="header__navbar-icon-link">
+                <i class="header__navbar-icon fa-brands fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="header__navbar-list">
+            <li class="header__navbar-icon header__navbar-item header__navbar-item-has--notify">
+              <a href="" class="header__navbar-item-link">
+                <div class="header__navbar-item-link-icon">
+                  <i class="fa-regular fa-bell"></i>
+                </div>
+                Thông báo
+              </a>
+              <div class="header__notify">
+                <header class="header__notify-header">
+                  <h4>Thông báo mới nhận</h4>
+                </header>
+                <ul class="header__notify-list">
+                  <li class="header__notify-item header__notify-item--viewed">
+                    <a href="" class="header__notify-link">
+                      <img
+                        src="https://kimnganbeautycare.com/wp-content/uploads/2020/09/ORMEDIC-BALANCING-GEL-POLISHER-%E2%80%93-T%E1%BA%A8Y-T%E1%BA%BE-B%C3%80O-CH%E1%BA%BET-CHO-DA.jpg"
+                        alt="" class="header__notify-img">
+                      <div class="header__notify-info">
+                        <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
+                        <span class="header__notify-descrioton">Mô tả mỹ phẩm Ohui chính
+                          chãng</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="header__notify-item header__notify-item--viewed">
+                    <a href="" class="header__notify-link">
+                      <img
+                        src="https://kimnganbeautycare.com/wp-content/uploads/2020/09/ORMEDIC-BALANCING-GEL-POLISHER-%E2%80%93-T%E1%BA%A8Y-T%E1%BA%BE-B%C3%80O-CH%E1%BA%BET-CHO-DA.jpg"
+                        alt="" class="header__notify-img">
+                      <div class="header__notify-info">
+                        <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
+                        <span class="header__notify-descrioton">Mô tả mỹ phẩm Ohui chính
+                          chãng</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="header__notify-item header__notify-item--viewed">
+                    <a href="" class="header__notify-link">
+                      <img
+                        src="https://kimnganbeautycare.com/wp-content/uploads/2020/09/ORMEDIC-BALANCING-GEL-POLISHER-%E2%80%93-T%E1%BA%A8Y-T%E1%BA%BE-B%C3%80O-CH%E1%BA%BET-CHO-DA.jpg"
+                        alt="" class="header__notify-img">
+                      <div class="header__notify-info">
+                        <span class="header__notify-name">Mỹ phẩm Ohui chính hãng</span>
+                        <span class="header__notify-descrioton">Mô tả mỹ phẩm Ohui chính
+                          chãng</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+                <footer class="header__notify-footer">
+                  <a href="" class="header__notify-footer-btn">
+                    Xem tất cả
+                  </a>
+                </footer>
+              </div>
+            </li>
+            <li class="header__navbar-item">
+              <a href="" class="header__navbar-item-link">
+                <div class="header__navbar-item-link-icon">
+                  <i class="fa-regular fa-circle-question"></i>
+                </div>
+                Trợ giúp
+              </a>
+            </li>
+
+            <li class="header__navbar-item header__navbar-user">
+              <img src="assets/img/unnamed.jpg" alt="" class="header__navabar-user-img">
+              <span class="header__navabar-user-name">Duy Nam</span>
+              <ul class="header__navbar-user-menu">
+                <li class="header__navbar-user-item">
+                  <a href="">Tài khoản của tôi</a>
+                </li>
+                <li class="header__navbar-user-item">
+                  <a href="">Địa chỉ của tôi</a>
+                </li>
+                <li class="header__navbar-user-item">
+                  <a href="">Đơn mua</a>
+                </li>
+                <li class="header__navbar-user-item header__navbar-user-item--separate">
+                  <a href="">Đăng xuất</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="d-flex header-with-cart">
+          <div class="header__logo-cart row">
+            <div class="col-sm-2">
+              <a ng-click="onCheckHeader()" class="header__logo-link" href="index.html">
+                <img src="assets/img/tiki.png" alt="" class="header__logo-img1">
+                <img src="assets/img/tikiship.png   " alt="" class="header__logo-img1">
+              </a>
+            </div>
+            <div class="col-sm-1" style="width: 10px;">
+              <div class="row">
+                <div class="col-sm-2 border__right-cart border-right"></div>
+              </div>
+            </div>
+          </div>
+          <div class="text-white--cart h1 text-white mt-2">Giỏ hàng</div>
+          <div class="header__search">
+            <div class="header__search-input-wrap">
+              <input type="text" class="header__search-input" placeholder="Nhập từ khóa để tìm kiếm sản phẩm">
+              <div class="header__search-history">
+                <h3 class="header__search-history-heading">
+                  Lịch sử tìm kiếm
+                </h3>
+                <ul class="header__search-history-list">
+                  <li class="header__search-history-item">
+                    <a href="">Kem dưỡng da</a>
+                  </li>
+                  <li class="header__search-history-item">
+                    <a href="">Kem dưỡng da</a>
+                  </li>
+                  <li class="header__search-history-item">
+                    <a href="">Kem dưỡng da</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="header__search-select">
+              <span class="header__search-select-label">Trong shop</span>
+              <i class="header__search-select-icon fa-solid fa-angle-down"></i>
+              <ul class="header__search-option">
+                <li class="header__search-option-item header__search-option-item--active">
+                  <span>Trong shop</span>
+                  <i class="fa-solid fa-check"></i>
+                </li>
+                <li class="header__search-option-item">
+                  <span>Ngoài shop</span>
+                  <i class="fa-solid fa-check"></i>
+                </li>
+              </ul>
+            </div>
+            <button class="header__search-btn">
+              <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
